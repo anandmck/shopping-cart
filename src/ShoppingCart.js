@@ -4,6 +4,7 @@ import CartHeader from './CartHeader';
 import CartFooter from './CartFooter';
 import CartItems from './CartItems';
 import AddItem from './AddItem';
+import ComputeTotal from './ComputeTotal';
 
 class ShoppingCart extends React.Component {
   
@@ -44,6 +45,7 @@ class ShoppingCart extends React.Component {
       <div id="root">
       <CartHeader />
       <CartItems cartItems={this.state.cartItemList} />
+      <ComputeTotal cartItems={this.state.cartItemList} />
       <AddItem products={this.state.products} addToCart={this.onAddToCart} cartId={this.state.cartCounter}/>
       <CartFooter year="2016" />
       </div> 

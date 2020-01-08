@@ -35,7 +35,7 @@ class ShoppingCart extends React.Component {
     this.setState(prevState => (
       {
          cartItemList : prevState.cartItemList.concat(item),
-         carCounter : item.id
+         cartCounter : item.id
       }
     ))
   } 

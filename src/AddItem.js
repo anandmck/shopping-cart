@@ -3,18 +3,28 @@ import './App.css';
 
 class AddItem extends React.Component{
     
+    constructor() {
+        super();
+        this.state = {Product:{},Qty:0};
+    }
+
     addItem = (e) => {
             e.preventDefault();
             e.target.reset();
-            let obj = this.props.products.filter(o => (o.name)===this.state.Product);
-            let newid = this.props.cartId + 1;
-            let item2add = {
-                id:newid,
-                product:obj[0],
-                quantity:this.state.Qty,
+            if (this.state.Qty !== 0) {
+                let obj = this.props.products.filter(o => (o.name)===this.state.Product);
+                let newid = this.props.cartId + 1;
+                let item2add = {
+                    id:newid,
+                    product:obj[0],
+                    quantity:this.state.Qty,
+                }
+                this.props.addToCart(item2add);
             }
-            this.props.addToCart(item2add);
+            this.setState({Product:{}, 
+                           Qty:0});
     }
+
 
     onChange = (e) => {
         this.setState({ [e.target.id]: e.target.value });

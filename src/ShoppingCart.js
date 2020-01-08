@@ -42,7 +42,7 @@ class ShoppingCart extends React.Component {
 
   render () {
     return (
-      <div id="root">
+      <div className="containter">
       <CartHeader />
       <CartItems cartItems={this.state.cartItemList} />
       <ComputeTotal cartItems={this.state.cartItemList} />
